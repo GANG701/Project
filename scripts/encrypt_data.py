@@ -71,7 +71,7 @@ try:
     conn = mysql.connector.connect(
         host='localhost',
         user='root',
-        password='cjfdl2#mysql',
+        password='password',
         database='sea_system'
     )
     cur = conn.cursor()
