@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.json
+*.db
+Crypt_old.py
+passenger_origin.py
+
+# Environment
+venv/
+.env
+
+# OS
+.DS_Store
+.vscode/
+
+# Security (CRITICAL)
+rsa_private.pem
+rsa_public.pem
