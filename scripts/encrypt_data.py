@@ -81,7 +81,7 @@ except mysql.connector.Error as err:
 
 # 테이블 생성
 cur.execute('''
-CREATE TABLE passengers (
+CREATE TABLE IF NOT EXISTS passengers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     gender CHAR(1),
