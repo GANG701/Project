@@ -54,7 +54,7 @@ python fastapi_decrypt_server.py
 
 - **Python 3.8+** + **FastAPI** + **MySQL**
 - **PyCryptodome** + **Pandas**
-- + 사용된 passenger_data는 무작위로 생성한 더미 데이터입니다.
+- 사용된 `passenger_data`는 무작위로 생성한 더미 데이터입니다.
 
 ## 🔧 문제 해결
 
