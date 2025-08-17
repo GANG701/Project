@@ -79,16 +79,19 @@ except mysql.connector.Error as err:
     print(f"MySQL 연결 오류: {err}")
     exit()
 
-# 테이블 생성
+# 테이블이 없다면 새로 생성하고, name, gender, job에 UNIQUE KEY를 추가
+# 테이블이 이미 존재할 경우 오류를 피하기 위해 DROP TABLE을 추가
+cur.execute("DROP TABLE IF EXISTS passengers")
 cur.execute('''
-CREATE TABLE IF NOT EXISTS passengers (
+CREATE TABLE passengers (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255),
     gender CHAR(1),
     job VARCHAR(255),
     encrypted_data BLOB NOT NULL,
     encrypted_aes_key BLOB NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE KEY unique_passenger (name, gender, job)
 )
 ''')
 print("[INFO] DB 테이블 'passengers' 준비 완료.")
