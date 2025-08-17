@@ -48,51 +48,13 @@ python fastapi_decrypt_server.py
 
 ### 3. API 사용
 - 서버: `http://127.0.0.1:8000`
-- API 문서: `http://127.0.0.1:8000/docs`
-- 승객 조회: `GET /passenger/{id}`
-
-## 📁 프로젝트 구조
-
-```
-region_project/
-├── data/                          # 승객 데이터 (CSV)
-├── keys/                          # RSA 키 파일
-├── scripts/                       # 암호화/복호화 스크립트
-├── server/                        # FastAPI 서버
-└── requirements.txt               # Python 패키지
-```
-
-## 🔌 API 예시
-
-### 승객 정보 조회
-```http
-GET /passenger/1
-```
-
-**응답:**
-```json
-{
-  "id": 1,
-  "name": "Lee Minjun",
-  "gender": "M",
-  "job": "Doctor",
-  "생년월일": "1989-03-25",
-  "전화번호": "010-3928-4721",
-  "지병여부": true
-}
-```
-
-## 🔒 보안
-
-- **AES-256**: 민감 데이터 암호화
-- **RSA-2048**: 키 암호화
-- **개별 키**: 각 레코드마다 고유한 AES 키
-- **데이터 분리**: 일반 정보(이름, 성별, 직업)와 민감 정보(생년월일, 전화번호, 지병여부) 분리
+- API 문서: `htt보(이름, 성별, 직업)와 민감 정보(생년월일, 전화번호, 지병여부) 분리
 
 ## 🛠️ 기술 스택
 
 - **Python 3.8+** + **FastAPI** + **MySQL**
 - **PyCryptodome** + **Pandas**
+- 사용된 `passenger_data`는 무작위로 생성한 더미 데이터입니다.
 
 ## 🔧 문제 해결
 
@@ -108,4 +70,4 @@ GET /passenger/1
 
 ---
 
-**⚠️ 주의사항**: 교육 목적 프로젝트입니다. 실제 운영 전 보안 검토 필수. 
+**⚠️ 주의사항**: 서비스 검토 필수
